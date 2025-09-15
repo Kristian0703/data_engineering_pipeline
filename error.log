@@ -1,0 +1,2 @@
+2025-09-15 09:07:02,473 - ERROR - ETL process stopped due to failed tests.
+2025-09-15 09:16:15,258 - ERROR - Error exporting master table to CSV: [Errno 13] Permission denied: 'dev\\cademycode_master_students_table.csv'

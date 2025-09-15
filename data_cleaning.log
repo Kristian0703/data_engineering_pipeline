@@ -1,0 +1,16 @@
+2025-09-15 09:07:02,473 - ERROR - ETL process stopped due to failed tests.
+2025-09-15 09:13:49,366 - INFO - Connected to source database.
+2025-09-15 09:13:49,513 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-15 09:13:49,630 - INFO - Master table written successfully.
+2025-09-15 09:13:49,748 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-15 09:13:49,805 - INFO - Master table exported to CSV successfully (no blank lines).
+2025-09-15 09:16:14,898 - INFO - Connected to source database.
+2025-09-15 09:16:15,045 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-15 09:16:15,144 - INFO - Master table written successfully.
+2025-09-15 09:16:15,255 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-15 09:16:15,258 - ERROR - Error exporting master table to CSV: [Errno 13] Permission denied: 'dev\\cademycode_master_students_table.csv'
+2025-09-15 09:16:32,188 - INFO - Connected to source database.
+2025-09-15 09:16:32,361 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-15 09:16:32,488 - INFO - Master table written successfully.
+2025-09-15 09:16:32,591 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-15 09:16:32,665 - INFO - Master table exported to CSV successfully (no blank lines).

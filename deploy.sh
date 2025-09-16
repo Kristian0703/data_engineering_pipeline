@@ -1,5 +1,5 @@
 #!/bin/bash
-# deploy.sh – Safe deployment script with rollback, date-aware log filtering, and deployment history
+# deploy.sh – Safe deployment script with rollback, date-aware log filtering, deployment history, and CSV export
 
 # === CONFIGURATION ===
 DEV_DIR="./dev"
@@ -17,7 +17,6 @@ NOW=$(date +"%Y-%m-%d %H:%M:%S")
 echo "=== 🚀 Starting Deployment Process ==="
 
 log_event() {
-    # Helper function to log to deployment history
     echo "[$NOW] $1" >> "$DEPLOYMENT_HISTORY"
 }
 
@@ -74,23 +73,30 @@ log_event "🚀 Deployment started for version $LATEST_VERSION (previous: $LAST_
 # === STEP 5: Backup current production files ===
 mkdir -p "$BACKUP_DIR"
 echo "🗄️ Creating backup of current production files..."
-cp "$PROD_DIR"/*.db "$BACKUP_DIR"/ 2>/dev/null
+cp "$PROD_DIR/cademycode_clean.db" "$BACKUP_DIR"/ 2>/dev/null
+cp "$PROD_DIR/cademycode_master_students_table.csv" "$BACKUP_DIR"/ 2>/dev/null
 
-# === STEP 6: Deploy only modified files ===
+# === STEP 6: Deploy cleaned database and CSV ===
 mkdir -p "$PROD_DIR"
 DEPLOY_FAILED=false
 
-for FILE in "$DEV_DIR"/*.db; do
-    if [ "$LAST_DEPLOYED_VERSION" == "none" ] || [ "$FILE" -nt "$STORED_VERSION_FILE" ]; then
-        echo "➡️  Deploying $(basename "$FILE")..."
-        cp "$FILE" "$PROD_DIR"/ || DEPLOY_FAILED=true
-    fi
-done
+# Deploy only the cleaned DB
+if [ "$LAST_DEPLOYED_VERSION" == "none" ] || [ "$DEV_DIR/cademycode_clean.db" -nt "$STORED_VERSION_FILE" ]; then
+    echo "➡️  Deploying cademycode_clean.db..."
+    cp "$DEV_DIR/cademycode_clean.db" "$PROD_DIR"/ || DEPLOY_FAILED=true
+fi
+
+# Deploy the exported CSV
+if [ "$LAST_DEPLOYED_VERSION" == "none" ] || [ "$DEV_DIR/cademycode_master_students_table.csv" -nt "$STORED_VERSION_FILE" ]; then
+    echo "➡️  Deploying cademycode_master_students_table.csv..."
+    cp "$DEV_DIR/cademycode_master_students_table.csv" "$PROD_DIR"/ || DEPLOY_FAILED=true
+fi
 
 # === STEP 7: Rollback if deployment failed ===
 if [ "$DEPLOY_FAILED" = true ]; then
     echo "❌ Deployment failed. Rolling back to previous version..."
-    cp "$BACKUP_DIR"/*.db "$PROD_DIR"/
+    cp "$BACKUP_DIR/cademycode_clean.db" "$PROD_DIR"/ 2>/dev/null
+    cp "$BACKUP_DIR/cademycode_master_students_table.csv" "$PROD_DIR"/ 2>/dev/null
     echo "🔄 Rollback complete. Production restored to previous state."
     log_event "❌ Deployment FAILED — Rolled back to previous version $LAST_DEPLOYED_VERSION."
     exit 1

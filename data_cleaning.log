@@ -29,3 +29,8 @@
 2025-09-16 08:32:10,872 - INFO - Master table written successfully.
 2025-09-16 08:32:10,953 - INFO - Individual tables (students, courses, students_jobs) written successfully.
 2025-09-16 08:32:10,979 - INFO - Master table exported to CSV successfully (no blank lines).
+2025-09-16 08:41:50,778 - INFO - Connected to source database.
+2025-09-16 08:41:50,861 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-16 08:41:50,944 - INFO - Master table written successfully.
+2025-09-16 08:41:51,026 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-16 08:41:51,047 - INFO - Master table exported to CSV successfully (no blank lines).

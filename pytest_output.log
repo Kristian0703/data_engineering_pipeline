@@ -5,8 +5,8 @@ configfile: pytest.ini
 plugins: Faker-30.8.0, typeguard-4.4.4, anyio-4.2.0
 
 ----------------------------- live log collection -----------------------------
-2025-09-16 08:32:09 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
-2025-09-16 08:32:09 - INFO - NumExpr defaulting to 8 threads.
+2025-09-16 08:41:49 - INFO - Note: NumExpr detected 16 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2025-09-16 08:41:49 - INFO - NumExpr defaulting to 8 threads.
 collected 1 item
 
 test_main.py::test_unit_tests_pass PASSED                                [100%]
@@ -17,4 +17,4 @@ test_main.py::test_unit_tests_pass
     warnings.warn("No new data found — clean database will still be refreshed.")
 
 -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
-======================== 1 passed, 1 warning in 0.50s =========================
+======================== 1 passed, 1 warning in 0.48s =========================

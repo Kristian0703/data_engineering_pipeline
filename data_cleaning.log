@@ -14,3 +14,18 @@
 2025-09-15 09:16:32,488 - INFO - Master table written successfully.
 2025-09-15 09:16:32,591 - INFO - Individual tables (students, courses, students_jobs) written successfully.
 2025-09-15 09:16:32,665 - INFO - Master table exported to CSV successfully (no blank lines).
+2025-09-16 08:11:44,098 - INFO - Connected to source database.
+2025-09-16 08:11:44,234 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-16 08:11:44,330 - INFO - Master table written successfully.
+2025-09-16 08:11:44,431 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-16 08:11:44,491 - INFO - Master table exported to CSV successfully (no blank lines).
+2025-09-16 08:31:38,899 - INFO - Connected to source database.
+2025-09-16 08:31:38,988 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-16 08:31:39,057 - INFO - Master table written successfully.
+2025-09-16 08:31:39,146 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-16 08:31:39,182 - INFO - Master table exported to CSV successfully (no blank lines).
+2025-09-16 08:32:10,712 - INFO - Connected to source database.
+2025-09-16 08:32:10,801 - INFO - Added synthetic 'No path selected' row to courses table.
+2025-09-16 08:32:10,872 - INFO - Master table written successfully.
+2025-09-16 08:32:10,953 - INFO - Individual tables (students, courses, students_jobs) written successfully.
+2025-09-16 08:32:10,979 - INFO - Master table exported to CSV successfully (no blank lines).
